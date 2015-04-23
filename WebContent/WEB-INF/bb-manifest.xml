@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <plugin>
+    <name value="GC Include Content"/>
+    <description value="include static content with ajax."/>
+    <handle value="GC Include Content"/>
+    <version value="1.0"/>
+    <requires>
+      <bbversion value="9.1.0"/>
+    </requires>
+
+    <vendor>
+      <id value="bb"/>
+      <name value="Blackboard Developer Community"/>
+      <url value="http://www.edugarage.com"/>
+      <description value="description"/>
+    </vendor>
+    
+    <http-actions>
+    </http-actions>
+    
+    <!-- Mashup VTBE Tools. -->
+    <application-defs>
+     <application handle="gc-include-content" is-sys-tool="true" is-course-tool="true"
+                  is-org-tool="true" is-group-tool="false" use-ssl="false"
+                  name="GC Include Content" can-allow-guest="false"
+                  small-icon="" large-icon="">
+      <links>
+       <link>
+         <type value="vtbe_mashup_course" />
+         <name value="GC Include Content" />
+         <url value="vtbe/mashup.jsp?course_id=@X@course.id@X@" />
+         <description value="description" />
+       </link>       
+      </links>
+     </application>
+    </application-defs>
+
+    <permissions>
+      <permission type="persist" name="Content" actions="create,modify,delete"/>
+      <permission type="persist" name="contentfile" actions="create,modify,delete"/>
+      <permission type="persist" name="metadatacontentareaassociation" actions="create"/>
+      <permission type="persist" name="metadatapickeruserpreference" actions="create"/>
+      <permission type="persist" name="metadatapickerattributevalues" actions="create"/>      
+      <permission type="attribute" name="user.personalinfo" actions="get"/>            
+      <permission type="attribute" name="user.authinfo" actions="get"/>  
+    </permissions>
+
+  </plugin>
+</manifest>
